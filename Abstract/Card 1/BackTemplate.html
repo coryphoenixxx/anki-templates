@@ -1,0 +1,23 @@
+<div id="front">{{Front}}</div>
+
+<div id="back">{{Back}}</div>
+
+<div id="debug">{{DEBUG}}</div>
+
+
+<script defer>
+setTimeout(function() {
+
+	const commandPattern = /<b>(.+?)<\/b>/g;
+
+	let back = document.getElementById('back');
+	back.innerHTML = back.innerHTML
+		.replace(commandPattern, `<div class='command'>$1</div>`)
+
+
+
+
+	debug = document.getElementById('debug');
+
+}, 5);
+</script>
