@@ -13,8 +13,6 @@
 	<div id='pictures'>{{Pictures}}</div>
 
 	<div id='examples' class='letter'>{{Examples}}</div>
-
-	<!-- <div id='debug'>{{DEBUG}}</div> -->
 </div>
 
 
@@ -30,7 +28,7 @@ setTimeout(function() {
 			[array[i], array[j]] = [array[j], array[i]];
     		}
 		return array;
-	};
+	}
 
 
 	function new_word_process(text) {
@@ -64,11 +62,12 @@ setTimeout(function() {
 	let example_display_count  = 0;
 
 
+
 	/*    NOTES BLOCK    */
 
-	const synonyms_pattern = /\(=(.+?)\)/;
-	const cognates_pattern = /\(~(.+?)\)/;
-	const warnings_pattern = /\(!(.+?)\)/;
+	const synonyms_pattern = /\[\[=(.+?)]]/;
+	const cognates_pattern = /\[\[~(.+?)]]/;
+	const warnings_pattern = /\[\[!(.+?)]]/;
 
 	let result = ''
 
@@ -141,12 +140,10 @@ setTimeout(function() {
 			english_block.remove();
 		} else {
 			let english = english_block.innerHTML
+				.replace(/especially/g, 'esp.')
 				.replace(/typically/g, 'typ.')
 				.replace(/something/g,  'smth')
-				.replace(/especially/g, 'esp.')
 				.replace(/someone/g, 'sb')
-				.replace(/somewhere/g, 'smwh')
-				.replace(/everything/g, 'evth')
 
 			english = english
 				.split('<br><br>')
@@ -229,16 +226,6 @@ setTimeout(function() {
 				nearest_tooltip.style.opacity = 0;
 			}, 1500);
 		})
-	});
-
-
-
-	/*    DEBUG BLOCK    */
-
-	/*
-	let debug_block = document.getElementById('debug');
-	debug_block.innerHTML = cognates;  document.querySelector('.card').innerHTML.replace(/</g,'‹').replace(/>/g,'›');
-	*/
-
+	})
 }, 5);
 </script>

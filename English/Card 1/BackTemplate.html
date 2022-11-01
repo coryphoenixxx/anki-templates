@@ -11,8 +11,6 @@
 	<div id="pictures">{{Pictures}}</div>
 
 	<div id='examples' class='letter'>{{Examples}}</div>
-
-	<!-- <div id='debug'>{{DEBUG}}</div> -->
 </div>
 
 
@@ -46,7 +44,7 @@ setTimeout(function() {
 				[array[i], array[j]] = [array[j], array[i]];
 				}
 			return array;
-		};
+		}
 
 
 		function new_word_process(text) {
@@ -79,11 +77,12 @@ setTimeout(function() {
 		const equals_pattern = /(.+?) = (.+?)/g;
 
 
+
 		/*    NOTES BLOCK    */
 
-		const synonyms_pattern = /\(=(.+?)\)/;
-		const cognates_pattern = /\(~(.+?)\)/;
-		const warnings_pattern = /\(!(.+?)\)/;
+		const synonyms_pattern = /\[\[=(.+?)]]/;
+		const cognates_pattern = /\[\[~(.+?)]]/;
+		const warnings_pattern = /\[\[!(.+?)]]/;
 
 		let result = ''
 
@@ -132,6 +131,7 @@ setTimeout(function() {
 
 
 
+
 		/*    MEANING BLOCK    */
 
 		function sentencify(sentence) {
@@ -148,12 +148,10 @@ setTimeout(function() {
 			english_block.remove();
 		} else {
 			let english = english_block.innerHTML
+				.replace(/especially/g, 'esp.')
 				.replace(/typically/g, 'typ.')
 				.replace(/something/g,  'smth')
-				.replace(/especially/g, 'esp.')
 				.replace(/someone/g, 'sb')
-				.replace(/somewhere/g, 'smwh')
-				.replace(/everything/g, 'evth')
 
 			english = english
 				.split('<br><br>')
@@ -237,18 +235,6 @@ setTimeout(function() {
 				}, 1500);
 			})
 		});
-
-
-
-		/*    DEBUG BLOCK    */
-
-
-		/*let debug_block = document.getElementById('debug');
-		debug_block.innerHTML = syllabify('Fulfilling expectations or needs; acceptable, though not outstanding or perfect.')*/
-
-
-
 	}, 500);
-
 }, 5);
 </script>

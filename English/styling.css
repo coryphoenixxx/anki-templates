@@ -207,17 +207,17 @@
 
 .synonym {
   font: italic  bold 15px/30px Georgia;
-  color: #17a625;
+  color: rgba(68, 131, 97, 1);
 }
 
 .cognate {
   font: italic  bold 15px/30px Georgia;
-  color: #324ccf;
+  color: rgba(51, 126, 169, 1);
 }
 
 .warning {
   font: italic  bold 15px/30px Georgia;
-  color: #e3332d;
+  color: rgba(212, 76, 71, 1);
 }
 
 		/* PICTURES BLOCK*/
