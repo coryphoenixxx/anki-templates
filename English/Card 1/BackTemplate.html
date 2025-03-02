@@ -1,14 +1,14 @@
 <div id='word' class='word-center'>{{Word}}</div>
 
 <div id='word-content'>
-	<div id='meaning'>{{Meaning}}</div>
+	<div id='meaning'>{{Definitions}}</div>
 
-	<input type="button" class="button" value="ПЕРЕВОД">
+	<input type="button" class="button" value="ПОКАЗАТЬ ПЕРЕВОДЫ">
 	<div id='translation'>{{Translation}}</div>
 
 	<div id='notes'>{{Notes}}</div>
 
-	<div id="pictures">{{Pictures}}</div>
+	<div id="pictures">{{Illustrations}}</div>
 
 	<div id='examples' class='letter'>{{Examples}}</div>
 </div>
@@ -18,21 +18,12 @@
 <script defer>
 setTimeout(function() {
 
-	let word_elem = document.getElementById('word');
-	word_elem.classList.add('word-start');
+	let wordElem = document.getElementById('word');
+	wordElem.classList.add('word-start');
 
-	const word = word_elem.textContent.replace('Replay', '').trim();
+	const word = wordElem.textContent.replace('Replay', '').trim();
 
-	if (word.length > 12) {
-		word_elem.style.fontSize = `calc((80vw - 4.5rem) / ${word.length/2})`;
-	}
-
-	sound_button = document.querySelector('.replay-button');
-
-	if (sound_button != null) {
-		sound_button.style.marginLeft = '0.2em';
-		sound_button.style.marginTop = '0.3em';
-	}
+	wordElem.style.fontSize = `calc((80vw - 4.5rem) / ${word.length/2})`;
 
 	setTimeout(function() {
 

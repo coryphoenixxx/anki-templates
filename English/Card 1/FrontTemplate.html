@@ -4,18 +4,10 @@
 
 <script defer>
 setTimeout(function() {
-	word_elem = document.getElementById('word');
-	word = word_elem.textContent.replace('Replay', '').trim();
+	let wordElem = document.getElementById('word');
 
-	sound_button = document.querySelector('.replay-button');
-
-	if (sound_button != null) {
-		sound_button.style.marginLeft = '0.2em';
-		sound_button.style.marginTop = '0.3em';
-	}
-
-	if (word.length > 12) {
-		word_elem.style.fontSize = `calc((80vw - 4.5rem) / ${word.length/2})`;
+	if (wordElem.length > 12) {
+		wordElem.style.fontSize = `calc((80vw - 4.5rem) / ${wordElem.length/2})`;
 	}
 }, 5);
 </script>
