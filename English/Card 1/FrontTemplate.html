@@ -1,13 +1,23 @@
-<div id='word' class='word-center'>{{Word}}</div>
+<div id='learning-word' class='learning-word__center'>
+{{Learning Word}}
+</div>
 
 
 
-<script defer>
-setTimeout(function() {
-	let wordElem = document.getElementById('word');
+<script>
+function adjustLearningWordFontSize() {
+	let learningWordElem = document.getElementById('learning-word');
+	const learningWordLength = learningWordElem.textContent.trim().length
 
-	if (wordElem.length > 12) {
-		wordElem.style.fontSize = `calc((80vw - 4.5rem) / ${wordElem.length/2})`;
+	if (learningWordLength > 10) {
+		const parentWidth = learningWordElem.parentElement.offsetWidth;
+		learningWordElem.style.fontSize = `${parentWidth / learningWordLength * 2}px`;
+
 	}
-}, 5);
+}
+
+
+setTimeout(adjustLearningWordFontSize, 100);
+
+window.addEventListener('resize', adjustLearningWordFontSize);
 </script>

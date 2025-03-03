@@ -26,25 +26,24 @@ body.night_mode {
   color: black;
 }
 
-
-#word {
+#learning-word {
   font-family: Times serif;
-  font-size: calc((80vw - 4.5rem) / 5);
+  font-size: calc((80vw - 5rem) / 7);
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.word-center {
+.learning-word__center {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   min-height: 90vh;
-  transition: min-height 0.5s ease-in;
+  transition: min-height 0.5s ease-in, font-size 0.1s ease-in-out;
 }
 
-.word-start {
-  min-height: 0vh;
+.learning-word__start {
+  min-height: 0;
 }
 
 
@@ -93,18 +92,18 @@ body.night_mode {
 
 		/* MEANING BLOCK */
 
-#meaning {
+#definitions {
   font-size: 20px;
   text-align: justify;
 }
 
-#meaning ol {
+#definitions ol {
   counter-reset: li; /* Initiate a counter */
   font: 20px 'trebuchet MS', 'lucida sans';
   margin-left: -1em;
 }
 
-#meaning li {
+#definitions li {
   position: relative;
   display: block;
   padding: .4em .4em .4em 1.5em;
@@ -114,7 +113,7 @@ body.night_mode {
   border-radius: .5em;
 }
 
-#meaning li:before {
+#definitions li:before {
   content: counter(li);
   counter-increment: li;
   position: absolute;
@@ -219,7 +218,7 @@ body.night_mode {
 
 		/* PICTURES BLOCK*/
 
-#pictures {
+#illustrations {
   width: 80%;
   display: flex;
   justify-content: center;
@@ -229,7 +228,7 @@ body.night_mode {
   margin: 20px auto; /* Центрируем блок */
 }
 
-#pictures img {
+#illustrations img {
   max-width: 100%;
   height: auto;
   border-radius: 12px; /* Скругляем углы */
